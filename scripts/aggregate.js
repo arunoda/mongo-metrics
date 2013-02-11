@@ -4,11 +4,12 @@ var result = db.metrics.aggregate([
 		{
 			_id: {
 				date: {
-					y: "$date.y",
-					mo: "$date.mo",
-					d: "$date.d",
-					h: "$date.h",
-					m: "$date.m"
+					y: "$resolution.y",
+					mo: "$resolution.mo",
+					d: "$resolution.d",
+					h: "$resolution.h",
+					m: "$resolution.m",
+					s: "$resolution.s"
 				},
 				source: "$source"
 			},

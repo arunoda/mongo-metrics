@@ -29,13 +29,14 @@ for(var metricName in metrics) {
 				d: date.getUTCDate(),
 				h: date.getUTCHours(),
 				m: date.getUTCMinutes(),
-				s: date.getUTCSeconds()
+				s: roundToNear(date.getUTCSeconds(), 5) //with 5 sec resolution
 			};
 
 			var metric = {
 				name: metricName,
 				source: source,
-				date: resolution,
+				resolution: resolution,
+				date: date,
 				value: getRandom(10, 40, true)
 			};
 
@@ -51,4 +52,9 @@ function getRandom(min, max, isInt) {
     var val = min + rand;
 
     return (isInt)? Math.ceil(val): val;
+}
+
+function roundToNear (value, roundVal) {
+	
+	return ((value - (value % roundVal)) / roundVal) * roundVal;
 }
