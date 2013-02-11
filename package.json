@@ -1,0 +1,31 @@
+{
+  "name": "mongo-metrics",
+  "version": "0.1.1",
+  "description": "Tracking Metrics with MongoDb",
+  "keywords": [
+    "metrics",
+    "mongodb",
+    "track"
+  ],
+  "main": "./lib/mongoMetrics.js",
+  "author": "Arunoda Susiripala <arunoda.susiripala@gmail.com>",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/arunoda/mongo-metrics.git"
+  },
+  "engines": {
+    "node": ">= 0.8.x",
+    "npm": ">= 1.1.x"
+  },
+  "scripts": {
+    "test": "test/index.js"
+  },
+  "dependencies": {
+    "mongodb": "1.2.x"
+  },
+  "devDependencies": {
+    "mongojs": "0.4.x",
+    "qbox": "0.1.x",
+    "mocha": "1.x.x"
+  }
+}
