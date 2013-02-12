@@ -21,7 +21,9 @@
     "test": "test/index.js"
   },
   "dependencies": {
-    "mongodb": "1.2.x"
+    "mongodb": "1.2.x",
+    "express": "3.x.x",
+    "ejs": "0.8.x"
   },
   "devDependencies": {
     "mongojs": "0.4.x",

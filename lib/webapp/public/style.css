@@ -1,0 +1,12 @@
+#heading {
+	font-size: 25px;
+	margin: 10px 0px 10px 0px;
+}
+
+hr {
+	margin: 0px 0px 10px 0px;
+}
+
+.graph svg {
+	height: 250px;
+}
