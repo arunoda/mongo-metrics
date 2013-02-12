@@ -44,7 +44,58 @@ suite('Mongo Metrics', function() {
 			}
 		}));
 	});
+
+	suite('.aggregate()', function() {
+
+		test('metric avg, source sum, min resolution', function(done) {
+
+			var metrics = [
+				{name: 'mp3', value: 10, source: 'b1', date: new Date('2012 01 01 10:45')},
+				{name: 'mp3', value: 8, source: 'b2', date: new Date('2012 01 01 10:45')},
+				{name: 'mp3', value: 8, source: 'b1', date: new Date('2012 01 01 10:45')},
+				{name: 'mp3', value: 6, source: 'b2', date: new Date('2012 01 01 10:45')},
+				{name: 'other', value: 6, source: 'b2', date: new Date('2012 01 01 10:46')}
+			];
+
+			var mm = new MongoMetrics(MONGO_URL, COLLECTION);
+
+			addBulkMetrics(mm, metrics, function(err) {
+
+				assert.equal(err, undefined);
+				mm.aggregate('mp3', 'minute', 'avg', 'sum', validateMetrics);
+			});
+
+			function validateMetrics(err, metrics) {
+
+				if(err) {
+					throw err;
+				}
+				assert.equal(err, null);
+				assert.deepEqual(metrics, [{ _id: { y: 2012, mo: 0, m: 15, h: 5, d: 1 }, value: 16 }]);
+				done();
+			}
+		});
+	});
 });
+
+function addBulkMetrics (mongoMetrics, metrics, callback) {
+	
+	var count = 0;
+	(function doInsert(err) {
+
+		if(err) {
+			callback(err);
+		} else {
+			var metric = metrics[count++];
+			if(metric) {
+				mongoMetrics.track(metric.name, metric.value, metric.source, metric.date, doInsert);
+			} else {
+				callback();
+			}
+		}
+
+	})();
+}
 
 function _clean(callback) {
 
