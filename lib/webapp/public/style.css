@@ -7,6 +7,18 @@ hr {
 	margin: 0px 0px 10px 0px;
 }
 
-.graph svg {
-	height: 250px;
+.graph {
+	height: 150px;
+}
+
+.legend{
+	margin: 10px 0px 0px 0px;
+}
+
+.legend .rickshaw_legend ul{
+	list-style-type: none;
+}
+
+.legend .rickshaw_legend li{
+	float: left;
 }
