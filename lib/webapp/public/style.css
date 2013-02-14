@@ -1,10 +1,29 @@
 #heading {
+	border-bottom: 1px solid #ddd;
+	margin: 10px 0px 10px 0px;
+}
+
+#heading h1{
 	font-size: 25px;
 	margin: 10px 0px 10px 0px;
 }
 
-hr {
-	margin: 0px 0px 10px 0px;
+#heading .span4 {
+	padding: 15px 0px 0px 0px;
+	text-align: right;
+}
+
+.graph-row {
+	border-bottom: 1px dashed #ddd;
+	padding: 0px 0px 15px 0px;
+	margin: 0px 0px 15px 0px;
+}
+
+.graph-container h4 {
+	font-size: 15px;
+	color: #888;
+	margin: 0px;
+	font-weight: normal;
 }
 
 .graph {
@@ -15,10 +34,20 @@ hr {
 	margin: 10px 0px 0px 0px;
 }
 
+.rickshaw_legend {
+	padding: 2px;
+}
+
 .legend .rickshaw_legend ul{
 	list-style-type: none;
 }
 
 .legend .rickshaw_legend li{
-	float: left;
+	/*float: left;*/
+}
+
+/* FORMS */
+#syntax {
+	width: 500px;
+	height: 150px;
 }
