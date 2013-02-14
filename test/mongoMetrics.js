@@ -38,7 +38,8 @@ suite('Mongo Metrics', function() {
 					d: date.getUTCDate(),
 					h: date.getUTCHours(),
 					m: date.getUTCMinutes(),
-					s: MongoMetrics._roundToNear(date.getUTCSeconds(), 5)
+					s5: MongoMetrics._roundToNear(date.getUTCSeconds(), 5),
+					s: date.getUTCSeconds()
 				});
 				done();
 			}
