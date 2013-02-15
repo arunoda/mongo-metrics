@@ -13,7 +13,15 @@ exports.listen = function(mongoUrl, port, options) {
 	options = options || {};
 
 	var mongoMetrics = new MongoMetrics(mongoUrl, options.collection);
-	var app = express();
+
+	var app;
+	if(typeof(port) == 'number') {
+		app = express();
+	} else if(port.constructor == express.constructor) {
+		app = port;
+	} else {
+		throw new Error("Second parameter should be either port number or a express app");
+	}
 
 	var currDir = path.dirname(__filename);
 
@@ -24,5 +32,7 @@ exports.listen = function(mongoUrl, port, options) {
 
 	routes(mongoMetrics, app, options);
 
-	app.listen(port);
+	if(typeof(port) == 'number') {
+		app.listen(port);
+	}
 };
