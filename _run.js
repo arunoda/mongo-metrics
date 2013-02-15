@@ -1,2 +1,4 @@
-var webapp = require('./webapp');
-webapp.listen("mongodb://localhost/metrics", 4000);
+var webapp = require('./dashboard');
+webapp.listen("mongodb://localhost/metrics", 4000, {
+	title: "Dejaset Metrics"
+});

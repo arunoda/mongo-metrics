@@ -3,7 +3,14 @@ var routes 			= require('./lib/webapp/routes');
 var MongoMetrics 	= require('./lib/mongoMetrics');
 var path			= require('path');
 
-exports.listen = function(mongoUrl, port) {
+/*
+	@param {Object} options - options for the dashboard.supported options are shown below
+		title - title for the webapp
+	
+*/
+exports.listen = function(mongoUrl, port, options) {
+
+	options = options || {};
 
 	var mongoMetrics = new MongoMetrics(mongoUrl);
 	var app = express();
@@ -15,7 +22,7 @@ exports.listen = function(mongoUrl, port) {
 	app.use(express.static(path.resolve(currDir, 'lib/webapp/public')));
 	app.use(express.bodyParser());
 
-	routes(mongoMetrics, app);
+	routes(mongoMetrics, app, options);
 
 	app.listen(port);
 };
