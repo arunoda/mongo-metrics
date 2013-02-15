@@ -1,4 +1,4 @@
-var MongoMetrics 	= require('./lib/mongoMetrics');
+var MongoMetrics 	= require('../lib/mongoMetrics');
 
 var metrics = new MongoMetrics("mongodb://localhost:27017/metrics");
 

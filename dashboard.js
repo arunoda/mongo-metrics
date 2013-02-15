@@ -12,7 +12,7 @@ exports.listen = function(mongoUrl, port, options) {
 
 	options = options || {};
 
-	var mongoMetrics = new MongoMetrics(mongoUrl);
+	var mongoMetrics = new MongoMetrics(mongoUrl, options.collection);
 	var app = express();
 
 	var currDir = path.dirname(__filename);

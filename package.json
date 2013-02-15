@@ -1,5 +1,6 @@
 {
   "name": "mongo-metrics",
+  "preferGlobal": "true",
   "version": "0.1.1",
   "description": "Tracking Metrics with MongoDb",
   "keywords": [
@@ -7,7 +8,6 @@
     "mongodb",
     "track"
   ],
-  "main": "./lib/mongoMetrics.js",
   "author": "Arunoda Susiripala <arunoda.susiripala@gmail.com>",
   "repository": {
     "type": "git",
@@ -17,17 +17,22 @@
     "node": ">= 0.8.x",
     "npm": ">= 1.1.x"
   },
+  "main": "./lib/mongoMetrics.js",
+  "bin": {
+    "mongo-metrics": "./bin/mongo-metrics"
+  },
   "scripts": {
     "test": "test/index.js"
   },
   "dependencies": {
     "mongodb": "1.2.x",
     "express": "3.x.x",
-    "ejs": "0.8.x"
+    "ejs": "0.8.x",
+    "optimist": "0.3.x",
+    "qbox": "0.1.x"
   },
   "devDependencies": {
     "mongojs": "0.4.x",
-    "qbox": "0.1.x",
     "mocha": "1.x.x"
   }
 }
