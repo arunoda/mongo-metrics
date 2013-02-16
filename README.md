@@ -122,8 +122,7 @@ Here is how you define a graph.
 
     <title for graph> | <graph-type> | <metric-name> | <value-aggregator>, <source-aggregator> | <resolution> | <time-length>
 
-eg:-
-    CPU Usage | area | cpu | avg, sum | five_secs | 1000 * 60 * 15
+eg:- `CPU Usage | area | cpu | avg, sum | five_secs | 1000 * 60 * 15`
 
 * Supported values for `graph-type` : `area`, `line`
 * Supported values for `value-aggregator` : sum, avg, min, max
