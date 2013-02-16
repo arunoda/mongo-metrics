@@ -131,7 +131,12 @@ eg:- `CPU Usage | area | cpu | avg, sum | five_secs | 1000 * 60 * 15`
 * You can use multiple lines to specify multiple graphs
 * Empty lines add empty block to dashboard instead of the graph
 
+### Permalink URLs
 
-##Todo
+* Configuration you do will be saved in the URL. 
+* So you can simply copy URL and share with others.
+* You can http://bit.ly or http://goo.gl to shorten the URL
+
+## Todo
 
 See: [Issues](https://github.com/arunoda/mongo-metrics/issues?labels=todo&milestone=none&page=1&state=open)
