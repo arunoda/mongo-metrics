@@ -1,9 +1,9 @@
 #!/usr/bin/env node
-var optimist 	= require('optimist');
-var dashboard 	= require('../dashboard');
+var optimist    = require('optimist');
+var dashboard   = require('../dashboard');
 
 var argv = optimist
-	.usage('\nStandalone `mongo-metrics` Dashboard')
+    .usage('\nStandalone `mongo-metrics` Dashboard')
     .demand('m')
     .describe('m', 'MongoDB connection URL')
     .describe('p', 'Port running dashboard')
@@ -17,8 +17,8 @@ var argv = optimist
 var mongoUrl = argv.m;
 var port = argv.p || 9910;
 var options = {
-	collection: argv.c,
-	title: argv.t
+    collection: argv.c,
+    title: argv.t
 };
 
 console.info("Starting `mongo-metrics` dashboard on port: " + port);
