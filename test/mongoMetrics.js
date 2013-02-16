@@ -30,7 +30,7 @@ suite('Mongo Metrics', function() {
                 assert.equal(metric.name, name);
                 assert.equal(metric.value, value);
                 assert.equal(metric.source, source);
-                assert.equal(metric.date.getTime(), date.getTime());
+                assert.equal(metric.date, date.getTime());
 
                 assert.deepEqual(metric.resolution, {
                     y: date.getUTCFullYear(),
